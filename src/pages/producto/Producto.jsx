@@ -150,7 +150,7 @@ const Producto = () => {
                 <h5>{list.nombre}</h5>
               </div>
               <div className="card-body">
-                <img src={list.imagen} alt={list.nombre} srcset="" width="50" />
+                <img src={list.imagen} alt={list.nombre} width="50" />
                 <h6>Precio: {list.precio}</h6>
                 <h6>Cantidad Disponible: {list.stock}</h6>
                 <h6>ID: {list._id}</h6>

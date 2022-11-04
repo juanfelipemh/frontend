@@ -55,8 +55,7 @@ const Compras = ({ carrito, setCarrito }) => {
             <div className="card-body">
               <img
                 src={producto.imagen}
-                alt={producto.nombre}
-                srcset=""
+                alt={producto.nombre}                
                 width="50"
               />
               <h6>Precio: {producto.precio}</h6>
