@@ -37,14 +37,14 @@ function App() {
           {/* Rutas Publicas */}
           <Routes>
             <Route path="/" element={<Layout />}>       
-            <Route index element={<Inicio />} />       
+            <Route path="inicio" index element={<Inicio />} />       
               <Route path="registrar" element={<Registrar />} />
               <Route path="confirmar/:token" element={<ConfirmarCuenta />} />
             </Route>
 
             {/* Rutas Protegidas */}
             <Route path="/" element={<RutaProtegida />}>
-            <Route element={<AdministrarUsuarios/>} />
+            <Route path="administrar" element={<AdministrarUsuarios/>} />
               <Route path="modificar/:id" element={<ModificarProd />} />              
               <Route path="perfil" element={<EditarPerfil/>} />            
               <Route path="cambiar-password" element={<CambiarPassword/>} />
