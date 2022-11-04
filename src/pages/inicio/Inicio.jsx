@@ -19,7 +19,7 @@ const Inicio = () => {
     e.preventDefault();
 
     try {
-      const { data } = await clienteAxios.post("/usuarios/login", {email, password}
+      const { data } = await clienteAxios.post("usuarios/login", {email, password}
       );
 
       localStorage.setItem("token", data.token);
