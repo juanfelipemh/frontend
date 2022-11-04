@@ -6,6 +6,7 @@ import { productoInputs } from "../../formRecursoProduc";
 import "./producto.css"
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import clienteAxios from "../../../config/axios";
 
 
 
@@ -26,8 +27,8 @@ const Producto = () => {
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/api/productos/consultarProductos"
+        const res = await clienteAxios.get(
+          "productos/consultarProductos"
         ); // PROBLEMA CON EL CORS - SE SOLUCIONÓ INSTALANDO UNA EXTENSIÓN EN CHROME O NPM CROS
         setProductos(res.data);
       } catch (error) {
@@ -94,8 +95,8 @@ const Producto = () => {
         confirmButtonText: "Si, eliminar!",
       }).then((result) => {
         if (result.isConfirmed) {
-          axios.delete(
-            "http://localhost:5000/api/productos/eliminarProducto/" + id
+          clienteAxios.delete(
+            "productos/eliminarProducto/" + id
           );
           Swal.fire("Eliminado!", "El producto ha sido eliminado", "success");
         }

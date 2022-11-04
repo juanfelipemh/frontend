@@ -4,8 +4,9 @@ import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 //import clienteAxios from "../../../config/axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
+//import axios from "axios";
 import './inicio.css'
+import clienteAxios from "../../../config/axios";
 
 const Inicio = () => {
   const [email, setEmail] = useState("");
@@ -18,8 +19,8 @@ const Inicio = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post(
-        "http://localhost:5000/api/usuarios/login",
+      const { data } = await clienteAxios.post(
+        `/usuarios/login`,
         {
           email,
           password,
@@ -32,7 +33,7 @@ const Inicio = () => {
       setAuth(data);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
 

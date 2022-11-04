@@ -20,7 +20,7 @@ import Compras from "./pages/compras/Compras";
 
 // usuarios
 import Registrar from "./pages/usuarios/Registrar";
-import ConfirmarCuenta from "./pages/usuarios/confirmarCuenta";
+import ConfirmarCuenta from "./pages/usuarios/ConfirmarCuenta";
 import OlvidePassword from './pages/usuarios/OlvidePassword';
 import NuevoPassword from './pages/usuarios/NuevoPassword';
 import AdministrarUsuarios from './pages/usuarios/AdministrarUsuarios';

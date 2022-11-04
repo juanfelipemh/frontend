@@ -48,37 +48,17 @@ const Venta = () => {
               <td>{list.createdAt}</td>
               <td>{list.valorTotal}</td>
               <td>
-                <Button variant="primary" onClick={handleShow}>
-                  Ver Productos
-                </Button>
-              </td>
+                {list.items.map((item) => (
+                  <tr key={list._id}>
+                    <td className="border">Nombre: {item.nombre} - Precio: {item.precio} - Cantidad: {item.quantity}</td>
+                  </tr>
+                ))}
+              </td>              
             </tr>
           </tbody>
         ))}
       </table>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Productos</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Table striped bordered hover>            
-              <tbody>
-                <tr>
-                  <td>Nombre</td>
-                  <td>Cantidad</td>
-                  <td>Valor Unitario</td>
-                  <td>Total</td>
-                </tr>
-              </tbody>            
-          </Table>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cerrar
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </>
   );
 };
