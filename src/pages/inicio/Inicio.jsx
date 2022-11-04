@@ -18,12 +18,10 @@ const Inicio = () => {
   const handleSudmit = async (e) => {
     e.preventDefault();
 
+    const datosLogin = { email, password }
+
     try {
-      const { data } = await clienteAxios.post("/usuarios/login",
-        {
-          email,
-          password,
-        }
+      const { data } = await clienteAxios.post("/usuarios/login", datosLogin
       );
 
       localStorage.setItem("token", data.token);
