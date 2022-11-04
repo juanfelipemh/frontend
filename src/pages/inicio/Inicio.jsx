@@ -18,10 +18,8 @@ const Inicio = () => {
   const handleSudmit = async (e) => {
     e.preventDefault();
 
-    const datosLogin = { email, password }
-
     try {
-      const { data } = await clienteAxios.post("/usuarios/login", datosLogin
+      const { data } = await clienteAxios.post("/usuarios/login", {email, password}
       );
 
       localStorage.setItem("token", data.token);
