@@ -27,7 +27,7 @@ const Producto = () => {
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const res = await clienteAxios.get("/productos/consultarProductos"
+        const res = await clienteAxios.get("productos/consultarProductos"
         ); // PROBLEMA CON EL CORS - SE SOLUCIONÓ INSTALANDO UNA EXTENSIÓN EN CHROME O NPM CROS
         setProductos(res.data);
       } catch (error) {

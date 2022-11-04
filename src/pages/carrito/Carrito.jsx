@@ -38,7 +38,7 @@ const Carrito = ({ carrito, setCarrito }) => {
         items: [...carrito]       
       };      
       
-      await clienteAxios.post("/facturas/agregarFacturas", nuevaFactura)
+      await clienteAxios.post("facturas/agregarFacturas", nuevaFactura)
       
       Swal.fire(
         'Compra relizada!',

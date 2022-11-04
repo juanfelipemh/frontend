@@ -11,7 +11,7 @@ const Compras = ({ carrito, setCarrito }) => {
     const obtenerProductos = async () => {
       try {
         const res = await clienteAxios.get(
-          "/productos/consultarProductos"
+          "productos/consultarProductos"
         ); // PROBLEMA CON EL CORS - SE SOLUCIONÓ INSTALANDO UNA EXTENSIÓN EN CHROME O NPM CROS
         setProductos(res.data);
       } catch (error) {

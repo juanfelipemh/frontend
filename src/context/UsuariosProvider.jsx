@@ -20,7 +20,7 @@ const UsuariosProvider = ({children}) =>{
                         Authorization: `Bearer ${token}`
                     }
                 };
-                const { data } = await clienteAxios('/usuarios/lista-usuarios', config);
+                const { data } = await clienteAxios('usuarios/lista-usuarios', config);
                 setUsuarios(data);
                 // console.log(data);
             } catch (error){
@@ -42,7 +42,7 @@ const UsuariosProvider = ({children}) =>{
 
        if(usuario.id) {
             try{
-                const { data } = await clienteAxios.put(`/usuarios/${usuario.id}`, usuario, config);
+                const { data } = await clienteAxios.put(`usuarios/${usuario.id}`, usuario, config);
                 console.log(data);
                 const usuariosActualizados = usuarios.map( usuarioState => usuarioState._id === data._id ? data : usuarioState);
                 setUsuarios(usuariosActualizados);
@@ -51,7 +51,7 @@ const UsuariosProvider = ({children}) =>{
             }
        }else{
             try{
-                const { data } = await clienteAxios.post('/usuarios', usuario, config)
+                const { data } = await clienteAxios.post('usuarios', usuario, config)
                 console.log(data)
                 const { createdAt, updatedAt, __v, ...usuarioAlmacenado } = data
                 setUsuarios([usuarioAlmacenado, ...usuarios]);
@@ -79,7 +79,7 @@ const UsuariosProvider = ({children}) =>{
                     }
                 } 
 
-                const { data } = await clienteAxios.delete(`/usuarios/${id}`, config);
+                const { data } = await clienteAxios.delete(`usuarios/${id}`, config);
 
                 const usuariosActualizados = usuarios.filter( usuarioState => usuarioState._id !== id);
                 setUsuarios(usuariosActualizados);

@@ -18,7 +18,7 @@ const Venta = () => {
     const obtenerFacturas = async () => {
       try {
         const res = await clienteAxios.get(
-          "/facturas/obtenerFacturas"
+          "facturas/obtenerFacturas"
         );
         setFacturas(res.data);
       } catch (error) {

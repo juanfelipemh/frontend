@@ -22,7 +22,7 @@ const OlvidePassword = () => {
     // Consultamos la API 
     try {
 
-      const { data } = await clienteAxios.post('/usuarios/olvide-password',{
+      const { data } = await clienteAxios.post('usuarios/olvide-password',{
         email
       });
 

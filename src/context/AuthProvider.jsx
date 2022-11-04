@@ -23,7 +23,7 @@ const AuthProvider = ({children}) =>{
                 }
             };
             try {
-                const { data } = await clienteAxios('/usuarios/perfil', config);
+                const { data } = await clienteAxios('usuarios/perfil', config);
                 setAuth(data);
                 //console.log(data);
                 //setCargando(false);
@@ -55,7 +55,7 @@ const AuthProvider = ({children}) =>{
         }
 
         try {
-            const url = `/usuarios/perfil/${datos._id}`
+            const url = `usuarios/perfil/${datos._id}`
             await clienteAxios.put(url, datos, config)
 
             return {
@@ -83,7 +83,7 @@ const AuthProvider = ({children}) =>{
         }
 
         try {
-            const url = '/usuarios/actualizar-password'
+            const url = 'usuarios/actualizar-password'
 
             const { data } = await clienteAxios.put(url, datos, config)
             console.log(data) 
