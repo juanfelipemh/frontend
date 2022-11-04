@@ -1,0 +1,11 @@
+#crear {
+    margin: 5px;
+    padding: 4px;
+    position: inherit;
+    
+}
+
+h2 {
+    text-align: center;
+    font-weight: 600;
+}

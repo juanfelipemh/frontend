@@ -1,0 +1,22 @@
+form {
+    text-align: center;
+}
+
+label {
+    margin: 10px;
+    font-weight: 600;
+}
+
+input {
+    width: 35%;
+    
+}
+
+#input {
+    margin: 10px;
+}
+
+nav {
+    font-size: 25px;
+}
+    

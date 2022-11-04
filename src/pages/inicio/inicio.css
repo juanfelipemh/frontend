@@ -1,0 +1,32 @@
+main {
+    height: 90%;  
+    display: flex;
+}
+
+p {
+    background: none;
+    position: absolute;
+    color: #ffff;
+    font-size: 100px;
+    text-align: center;    
+    
+}
+
+form {
+    margin: 20px;
+}
+
+#input {
+    width: max-content;
+}
+
+
+nav { 
+    font-size: 10px;
+    margin: 5px 0;
+}
+
+.img-inicio {
+    width: 100%;
+
+}
