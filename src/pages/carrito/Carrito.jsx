@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import clienteAxios from "../../../config/axios";
 
 const Carrito = ({ carrito, setCarrito }) => {
  
@@ -37,7 +38,7 @@ const Carrito = ({ carrito, setCarrito }) => {
         items: [...carrito]       
       };      
       
-      await axios.post("http://localhost:5000/api/facturas/agregarFacturas", nuevaFactura)
+      await clienteAxios.post("/facturas/agregarFacturas", nuevaFactura)
       
       Swal.fire(
         'Compra relizada!',

@@ -27,8 +27,7 @@ const Producto = () => {
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const res = await clienteAxios.get(
-          "productos/consultarProductos"
+        const res = await clienteAxios.get("/productos/consultarProductos"
         ); // PROBLEMA CON EL CORS - SE SOLUCIONÓ INSTALANDO UNA EXTENSIÓN EN CHROME O NPM CROS
         setProductos(res.data);
       } catch (error) {
@@ -36,7 +35,7 @@ const Producto = () => {
       }
     };
     obtenerProductos();
-  }, [productos]);
+  }, []);
 
   /*   CREACIÓN DE UN PRODUCTO
       ==========================
@@ -66,8 +65,8 @@ const Producto = () => {
     e.preventDefault();
     try {
       const productoNuevo = { ...nuevoProducto };
-      await axios.post(
-        "http://localhost:5000/api/productos/agregarProducto",
+      await clienteAxios.post(
+        "/productos/agregarProducto",
         productoNuevo
       );
       if (handleClick) {

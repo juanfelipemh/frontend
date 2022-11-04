@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./venta.css";
 import axios from "axios";
 import { Button, Modal, Table } from "react-bootstrap";
+import clienteAxios from '../../../config/axios'
 
 const Venta = () => {
   const [facturas, setFacturas] = useState([]);
@@ -16,8 +17,8 @@ const Venta = () => {
   useEffect(() => {
     const obtenerFacturas = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/api/facturas/obtenerFacturas"
+        const res = await clienteAxios.get(
+          "/facturas/obtenerFacturas"
         );
         setFacturas(res.data);
       } catch (error) {
@@ -27,7 +28,6 @@ const Venta = () => {
     obtenerFacturas();
   }, []);
 
-  const { items } = facturas;
 
   return (
     <>
@@ -41,15 +41,15 @@ const Venta = () => {
             <th scope="col">Total Compra</th>
           </tr>
         </thead>
-        {facturas.map((list) => (
-          <tbody key={list._id}>
+        {facturas.map((list, id) => (
+          <tbody key={id}>
             <tr>
               <td>{list._id}</td>
               <td>{list.createdAt}</td>
               <td>{list.valorTotal}</td>
               <td>
-                {list.items.map((item) => (
-                  <tr key={list._id}>
+                {list.items.map((item, id) => (
+                  <tr key={id}>
                     <td className="border">Nombre: {item.nombre} - Precio: {item.precio} - Cantidad: {item.quantity}</td>
                   </tr>
                 ))}

@@ -52,7 +52,7 @@ const Inicio = () => {
             </label>
             <input
               type="email"
-              id="input"
+              id="ingresar"
               placeholder="Email de registro"
               className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
               value={email}

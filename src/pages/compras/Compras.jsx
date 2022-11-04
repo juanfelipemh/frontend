@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
+import clienteAxios from "../../../config/axios";
 
 const Compras = ({ carrito, setCarrito }) => {
   const [productos, setProductos] = useState([]);
@@ -9,8 +10,8 @@ const Compras = ({ carrito, setCarrito }) => {
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5000/api/productos/consultarProductos"
+        const res = await clienteAxios.get(
+          "/productos/consultarProductos"
         ); // PROBLEMA CON EL CORS - SE SOLUCIONÓ INSTALANDO UNA EXTENSIÓN EN CHROME O NPM CROS
         setProductos(res.data);
       } catch (error) {
