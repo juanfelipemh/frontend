@@ -48,7 +48,7 @@ function App() {
               <Route path="modificar/:id" element={<ModificarProd />} />              
               <Route path="perfil" element={<EditarPerfil/>} />            
               <Route path="cambiar-password" element={<CambiarPassword/>} />
-              <Route index path="producto" element={<Producto />} />
+              <Route path="producto" element={<Producto />} />
               <Route path="carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
               <Route path="compras" element={<Compras carrito={carrito} setCarrito={setCarrito} />} />
               <Route path="venta" element={<Venta />} />
