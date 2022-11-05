@@ -44,7 +44,7 @@ function App() {
 
             {/* Rutas Protegidas */}
             <Route path="/" element={<RutaProtegida />}>
-            <Route index element={<AdministrarUsuarios/>} />
+            <Route element={<AdministrarUsuarios/>} />
               <Route path="modificar/:id" element={<ModificarProd />} />              
               <Route path="perfil" element={<EditarPerfil/>} />            
               <Route path="cambiar-password" element={<CambiarPassword/>} />
