@@ -37,7 +37,7 @@ function App() {
           {/* Rutas Publicas */}
           <Routes>
             <Route path="/" element={<Layout />}>       
-            <Route index path="producto" element={<Inicio />} />       
+            <Route path="inicio" element={<Inicio />} />       
               <Route path="registrar" element={<Registrar />} />
               <Route path="confirmar/:token" element={<ConfirmarCuenta />} />
             </Route>
@@ -48,7 +48,7 @@ function App() {
               <Route path="modificar/:id" element={<ModificarProd />} />              
               <Route path="perfil" element={<EditarPerfil/>} />            
               <Route path="cambiar-password" element={<CambiarPassword/>} />
-              <Route path="producto" element={<Producto />} />
+              <Route index path="producto" element={<Producto />} />
               <Route path="carrito" element={<Carrito carrito={carrito} setCarrito={setCarrito} />} />
               <Route path="compras" element={<Compras carrito={carrito} setCarrito={setCarrito} />} />
               <Route path="venta" element={<Venta />} />
