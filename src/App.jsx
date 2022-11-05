@@ -36,7 +36,7 @@ function App() {
         <UsuariosProvider>
           {/* Rutas Publicas */}
           <Routes>
-            <Route path="/" element={<Layout />}>       
+            <Route path="inicio" element={<Layout />}>       
             <Route path="inicio" element={<Inicio />} />       
               <Route path="registrar" element={<Registrar />} />
               <Route path="confirmar/:token" element={<ConfirmarCuenta />} />
