@@ -127,6 +127,7 @@ const Producto = () => {
                   onChange={handleChange}
                   type={input.type}
                   placeholder={input.placeholder}
+                  name={input.name}
                 />
               </div>
             </form>
